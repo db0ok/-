@@ -1,0 +1,41 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#include"labmanage.h"
+
+int main()
+{
+
+	//创建链表
+	List1 list1 = { NULL,0 };
+	List2 list2 = { NULL,0 };
+	List2 list3 = { NULL,0 };
+
+	//内存设置
+	memset(&list1, 0, sizeof(List1));
+	memset(&list2, 0, sizeof(List2));
+	memset(&list3, 0, sizeof(List3));
+
+	int isrunning = 1;
+
+	while (isrunning)
+	{
+		switch (menu())
+		{
+		case 0:isrunning = 0; printf("QUIT"); break;
+		case 1:fun1(&list1, &list2, &list3); break;
+		case 2:fun2(&list1, &list2, &list3); break;
+		}
+		
+		
+		if (isrunning)
+		{
+			//暂停程序
+			system("pause");
+			//清屏
+			system("cls");
+		}
+	}
+	
+	return 0;
+}    
